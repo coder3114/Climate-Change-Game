@@ -13,14 +13,14 @@ cars, trains, bikes
 factories/industries plants, offices
 
 
-
-
 Final improving ideas: Collaborate with climate change organizations: Partner with climate change organizations and
 experts to ensure the accuracy and relevance of the information presented in the game. This could also help to
 increase the reach and impact of the game by leveraging the networks of these organizations.
 */
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class ClimateChangeGame {
 
@@ -29,7 +29,29 @@ public class ClimateChangeGame {
         final JFrame frame = new JFrame("Climate Change Game");
         frame.setContentPane(gameScreen.getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // add a change listener to the slider about home energy - electricity usage
+        gameScreen.getOilSlider().addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int oilValue = source.getValue();
+                    gameScreen.getOilLabel().setText(String.valueOf(oilValue));
+                    // do something with the new value, e.g. update a variable or call a method
+                }
+                //moneyCalculator(homeEnergyAmountOfElectricity);
+            }
+        });
+
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public void moneyCalculator() {
+        double money = 1000;
+    }
+
+    public void carbonCalculator() {
+
     }
 }
