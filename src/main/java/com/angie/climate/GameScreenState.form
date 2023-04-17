@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.angie.climate.GameScreenState">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="27" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="30" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="20" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="20" y="20" width="925" height="834"/>
+      <xy x="20" y="20" width="925" height="919"/>
     </constraints>
     <properties>
       <font name="JetBrains Mono" style="1"/>
@@ -12,25 +12,29 @@
     <children>
       <component id="19ee5" class="javax.swing.JSlider" binding="meatSlider">
         <constraints>
-          <grid row="22" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="25" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
           <paintTicks value="true"/>
+          <snapToTicks value="true"/>
         </properties>
       </component>
       <component id="f132c" class="javax.swing.JSlider" binding="trainSlider">
         <constraints>
-          <grid row="15" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="17" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
           <paintTicks value="true"/>
+          <snapToTicks value="true"/>
         </properties>
       </component>
       <component id="977d5" class="javax.swing.JLabel">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Total energy consumption (Million tonnes of oil equivalent)"/>
@@ -55,7 +59,7 @@
       </component>
       <component id="a3094" class="javax.swing.JLabel">
         <constraints>
-          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -65,7 +69,7 @@
       </component>
       <component id="80f4f" class="javax.swing.JSlider" binding="gasSlider">
         <constraints>
-          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <majorTickSpacing value="10"/>
@@ -74,12 +78,12 @@
           <paintLabels value="false"/>
           <paintTicks value="true"/>
           <paintTrack value="true"/>
-          <snapToTicks value="false"/>
+          <snapToTicks value="true"/>
         </properties>
       </component>
-      <component id="4bf03" class="javax.swing.JLabel">
+      <component id="4bf03" class="javax.swing.JLabel" binding="gasLabel">
         <constraints>
-          <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
@@ -87,7 +91,7 @@
       </component>
       <component id="56ab1" class="javax.swing.JButton" binding="iAmReadyToButton" default-binding="true">
         <constraints>
-          <grid row="26" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="29" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="30"/>
           </grid>
         </constraints>
@@ -151,28 +155,9 @@
           <text value="Carbon Zero Challenge"/>
         </properties>
       </component>
-      <component id="8c4dd" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="17" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="102" height="16"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Boats  / Bus??"/>
-        </properties>
-      </component>
-      <component id="301b4" class="javax.swing.JSlider" binding="busSlider">
-        <constraints>
-          <grid row="17" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <majorTickSpacing value="10"/>
-          <paintTicks value="true"/>
-        </properties>
-      </component>
       <component id="a43aa" class="javax.swing.JLabel">
         <constraints>
-          <grid row="18" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="20" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -182,16 +167,18 @@
       </component>
       <component id="17816" class="javax.swing.JSlider" binding="planeSlider">
         <constraints>
-          <grid row="18" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="20" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
           <paintTicks value="true"/>
+          <snapToTicks value="true"/>
         </properties>
       </component>
       <component id="f2c6d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -201,7 +188,7 @@
       </component>
       <component id="be7d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -211,31 +198,16 @@
       </component>
       <component id="67f7a" class="javax.swing.JSlider" binding="nuclearSlider">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <majorTickSpacing value="10"/>
-          <paintTicks value="true"/>
-        </properties>
-      </component>
-      <component id="41f60" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="100"/>
-        </properties>
-      </component>
-      <component id="c81bb" class="javax.swing.JSlider" binding="windSlider">
-        <constraints>
           <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
           <paintTicks value="true"/>
+          <snapToTicks value="true"/>
         </properties>
       </component>
-      <component id="f0908" class="javax.swing.JLabel">
+      <component id="41f60" class="javax.swing.JLabel" binding="nuclearLabel">
         <constraints>
           <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -243,9 +215,28 @@
           <text value="100"/>
         </properties>
       </component>
+      <component id="c81bb" class="javax.swing.JSlider" binding="windSlider">
+        <constraints>
+          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
+          <paintTicks value="true"/>
+          <snapToTicks value="true"/>
+        </properties>
+      </component>
+      <component id="f0908" class="javax.swing.JLabel" binding="windLabel">
+        <constraints>
+          <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="100"/>
+        </properties>
+      </component>
       <component id="de07b" class="javax.swing.JLabel">
         <constraints>
-          <grid row="15" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="17" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -253,42 +244,7 @@
           <text value="Trains"/>
         </properties>
       </component>
-      <component id="6d679" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="16" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="102" height="16"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Cars"/>
-        </properties>
-      </component>
-      <component id="b3c68" class="javax.swing.JSlider" binding="carSlider">
-        <constraints>
-          <grid row="16" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <majorTickSpacing value="10"/>
-          <paintTicks value="true"/>
-        </properties>
-      </component>
-      <component id="e364f" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="15" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="100"/>
-        </properties>
-      </component>
-      <component id="7ac5a" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="16" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="100"/>
-        </properties>
-      </component>
-      <component id="71bd2" class="javax.swing.JLabel">
+      <component id="e364f" class="javax.swing.JLabel" binding="trainLabel">
         <constraints>
           <grid row="17" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -296,9 +252,9 @@
           <text value="100"/>
         </properties>
       </component>
-      <component id="e93a0" class="javax.swing.JLabel">
+      <component id="e93a0" class="javax.swing.JLabel" binding="planeLabel">
         <constraints>
-          <grid row="18" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="20" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
@@ -306,7 +262,7 @@
       </component>
       <component id="c1241" class="javax.swing.JLabel">
         <constraints>
-          <grid row="22" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="25" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -316,7 +272,7 @@
       </component>
       <component id="f9825" class="javax.swing.JLabel">
         <constraints>
-          <grid row="23" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="26" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -326,24 +282,26 @@
       </component>
       <component id="d4b67" class="javax.swing.JSlider" binding="plantSlider">
         <constraints>
-          <grid row="23" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="26" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
           <paintTicks value="true"/>
+          <snapToTicks value="true"/>
         </properties>
       </component>
-      <component id="64e8a" class="javax.swing.JLabel">
+      <component id="64e8a" class="javax.swing.JLabel" binding="meatLabel">
         <constraints>
-          <grid row="22" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="25" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
         </properties>
       </component>
-      <component id="fe296" class="javax.swing.JLabel">
+      <component id="fe296" class="javax.swing.JLabel" binding="plantLabel">
         <constraints>
-          <grid row="23" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="26" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
@@ -351,13 +309,13 @@
       </component>
       <component id="70485" class="javax.swing.JSeparator">
         <constraints>
-          <grid row="13" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="15" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
       <component id="b7da9" class="javax.swing.JLabel" binding="oilLabel">
         <constraints>
-          <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <horizontalTextPosition value="4"/>
@@ -366,13 +324,13 @@
       </component>
       <component id="e25eb" class="javax.swing.JSeparator">
         <constraints>
-          <grid row="20" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="23" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
       <component id="74df9" class="javax.swing.JSlider" binding="oilSlider">
         <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <enabled value="true"/>
@@ -380,11 +338,11 @@
           <majorTickSpacing value="10"/>
           <maximum value="100"/>
           <minimum value="0"/>
-          <minorTickSpacing value="0"/>
+          <minorTickSpacing value="10"/>
           <paintTicks value="true"/>
           <paintTrack value="true"/>
           <snapToTicks value="true"/>
-          <value value="10"/>
+          <value value="50"/>
           <valueIsAdjusting value="false"/>
         </properties>
         <clientProperties>
@@ -394,7 +352,7 @@
       </component>
       <component id="b0c21" class="javax.swing.JLabel">
         <constraints>
-          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="16"/>
           </grid>
         </constraints>
@@ -404,7 +362,7 @@
       </component>
       <component id="2a7e0" class="javax.swing.JLabel">
         <constraints>
-          <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Total energy supply"/>
@@ -412,7 +370,7 @@
       </component>
       <component id="30c49" class="javax.swing.JLabel">
         <constraints>
-          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Target 1000"/>
@@ -420,7 +378,7 @@
       </component>
       <component id="64afd" class="javax.swing.JLabel" binding="totalEnergyValue">
         <constraints>
-          <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="13" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
@@ -428,7 +386,7 @@
       </component>
       <component id="debd1" class="javax.swing.JLabel">
         <constraints>
-          <grid row="19" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="21" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Total distance"/>
@@ -436,7 +394,7 @@
       </component>
       <component id="ee3b0" class="javax.swing.JLabel">
         <constraints>
-          <grid row="19" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="21" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Target 1000"/>
@@ -444,7 +402,7 @@
       </component>
       <component id="5d0b2" class="javax.swing.JLabel" binding="totalDistanceValue">
         <constraints>
-          <grid row="19" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="21" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
@@ -452,7 +410,7 @@
       </component>
       <component id="9e851" class="javax.swing.JLabel">
         <constraints>
-          <grid row="24" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="27" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Total energy supply"/>
@@ -460,7 +418,7 @@
       </component>
       <component id="8b6aa" class="javax.swing.JLabel" binding="totalFoodValue">
         <constraints>
-          <grid row="24" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="27" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
@@ -468,7 +426,7 @@
       </component>
       <component id="f64b4" class="javax.swing.JLabel">
         <constraints>
-          <grid row="24" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="27" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Target 500"/>
@@ -476,14 +434,14 @@
       </component>
       <vspacer id="73ac3">
         <constraints>
-          <grid row="25" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+          <grid row="28" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
             <minimum-size width="1" height="30"/>
           </grid>
         </constraints>
       </vspacer>
       <component id="cb53a" class="javax.swing.JLabel">
         <constraints>
-          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Transportation"/>
@@ -491,7 +449,7 @@
       </component>
       <component id="b249e" class="javax.swing.JLabel">
         <constraints>
-          <grid row="21" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="24" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Food consumption"/>
@@ -505,7 +463,7 @@
       </component>
       <component id="a9de8" class="javax.swing.JSeparator">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
       </component>
@@ -518,10 +476,89 @@
       <vspacer id="2e2ae">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <minimum-size width="0" height="20"/>
+            <minimum-size width="0" height="10"/>
           </grid>
         </constraints>
       </vspacer>
+      <component id="6d679" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="19" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="102" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Cars"/>
+        </properties>
+      </component>
+      <component id="8c4dd" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="18" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="102" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Boats  / Bus??"/>
+        </properties>
+      </component>
+      <component id="71bd2" class="javax.swing.JLabel" binding="busLabel">
+        <constraints>
+          <grid row="18" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="100"/>
+        </properties>
+      </component>
+      <component id="7ac5a" class="javax.swing.JLabel" binding="carLabel">
+        <constraints>
+          <grid row="19" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="100"/>
+        </properties>
+      </component>
+      <vspacer id="952af">
+        <constraints>
+          <grid row="22" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <minimum-size width="0" height="10"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <vspacer id="9f2d9">
+        <constraints>
+          <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <minimum-size width="0" height="10"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <vspacer id="1369d">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <minimum-size width="0" height="10"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <component id="b3c68" class="javax.swing.JSlider" binding="carSlider">
+        <constraints>
+          <grid row="19" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
+          <paintTicks value="true"/>
+          <snapToTicks value="true"/>
+        </properties>
+      </component>
+      <component id="301b4" class="javax.swing.JSlider" binding="busSlider">
+        <constraints>
+          <grid row="18" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <majorTickSpacing value="10"/>
+          <minorTickSpacing value="10"/>
+          <paintTicks value="true"/>
+          <snapToTicks value="true"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

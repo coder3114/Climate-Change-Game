@@ -30,7 +30,7 @@ public class ClimateChangeGame {
         frame.setContentPane(gameScreen.getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // add a change listener to the slider about home energy - electricity usage
+        // add a change listener to the oil slider
         gameScreen.getOilSlider().addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 JSlider source = (JSlider) e.getSource();
@@ -43,10 +43,110 @@ public class ClimateChangeGame {
             }
         });
 
-        //gameScreen.
+        //add a change listener to the gas slider
+        gameScreen.getGasSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int gasValue = source.getValue();
+                    gameScreen.getGasLabel().setText(String.valueOf(gasValue));
+                }
+            }
+        });
+
+        gameScreen.getNuclearSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int nuclearValue = source.getValue();
+                    gameScreen.getNuclearLabel().setText(String.valueOf(nuclearValue));
+                }
+            }
+        });
+
+        gameScreen.getWindSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int windValue = source.getValue();
+                    gameScreen.getWindLabel().setText(String.valueOf(windValue));
+                }
+            }
+        });
+
+        gameScreen.getTrainSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int trainValue = source.getValue();
+                    gameScreen.getTrainLabel().setText(String.valueOf(trainValue));
+                }
+            }
+        });
+
+        gameScreen.getBusSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int busValue = source.getValue();
+                    gameScreen.getBusLabel().setText(String.valueOf(busValue));
+                }
+            }
+        });
+
+        gameScreen.getCarSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int carValue = source.getValue();
+                    gameScreen.getCarLabel().setText(String.valueOf(carValue));
+                }
+            }
+        });
+
+        gameScreen.getPlaneSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int planeValue = source.getValue();
+                    gameScreen.getPlaneLabel().setText(String.valueOf(planeValue));
+                }
+            }
+        });
+
+        gameScreen.getMeatSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int meatValue = source.getValue();
+                    gameScreen.getMeatLabel().setText(String.valueOf(meatValue));
+                }
+            }
+        });
+
+        gameScreen.getPlantSlider().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                JSlider source = (JSlider) e.getSource();
+                if (!source.getValueIsAdjusting()) {
+                    int plantValue = source.getValue();
+                    gameScreen.getPlantLabel().setText(String.valueOf(plantValue));
+                }
+            }
+        });
 
         frame.pack();
         frame.setVisible(true);
+
+
     }
 
     public void moneyCalculator() {
