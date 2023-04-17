@@ -43,6 +43,8 @@ public class ClimateChangeGame {
             }
         });
 
+        //gameScreen.
+
         frame.pack();
         frame.setVisible(true);
     }
