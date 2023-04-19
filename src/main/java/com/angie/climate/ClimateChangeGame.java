@@ -16,6 +16,18 @@ factories/industries plants, offices
 Final improving ideas: Collaborate with climate change organizations: Partner with climate change organizations and
 experts to ensure the accuracy and relevance of the information presented in the game. This could also help to
 increase the reach and impact of the game by leveraging the networks of these organizations.
+
+
+TODO
+initialization
+- set the value of the sliders
+- set each target
+- set money
+
+set logic for slider changes
+- show the real time value
+- implement a enum to store name, unit price, coefficient, type for each type of energy
+- re-calculate total energy using a common method with enum as parameter
 */
 
 import javax.swing.*;
@@ -32,6 +44,7 @@ public class ClimateChangeGame {
 
         // add a change listener to the oil slider
         gameScreen.getOilSlider().addChangeListener(new ChangeListener() {
+            @Override
             public void stateChanged(ChangeEvent e) {
                 JSlider source = (JSlider) e.getSource();
                 if (!source.getValueIsAdjusting()) {
@@ -148,6 +161,12 @@ public class ClimateChangeGame {
 
 
     }
+
+    public void energySupplyCalculator() {
+        int totalEnergySupply;
+
+    }
+
 
     public void moneyCalculator() {
         double money = 1000;
