@@ -20,7 +20,7 @@ increase the reach and impact of the game by leveraging the networks of these or
 
 TODO
 initialization
-- set the value of the sliders
+- set the value of the sliders in it's own method
 - set each target
 - set money
 
@@ -38,6 +38,8 @@ public class ClimateChangeGame {
 
     public static void main(String[] arg) {
         final GameScreenState gameScreen = new GameScreenState();
+
+        //setDefault(gameScreen);
         final JFrame frame = new JFrame("Climate Change Game");
         frame.setContentPane(gameScreen.getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -161,6 +163,7 @@ public class ClimateChangeGame {
 
 
     }
+
 
     public void energySupplyCalculator() {
         int totalEnergySupply;
