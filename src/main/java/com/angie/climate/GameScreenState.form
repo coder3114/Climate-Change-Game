@@ -246,7 +246,7 @@
       </component>
       <component id="e364f" class="javax.swing.JLabel" binding="trainLabel">
         <constraints>
-          <grid row="17" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="16" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="100"/>
@@ -319,7 +319,7 @@
         </constraints>
         <properties>
           <horizontalTextPosition value="4"/>
-          <text value="100"/>
+          <text value="2"/>
         </properties>
       </component>
       <component id="e25eb" class="javax.swing.JSeparator">
@@ -497,10 +497,10 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Boats  / Bus??"/>
+          <text value="Boats"/>
         </properties>
       </component>
-      <component id="71bd2" class="javax.swing.JLabel" binding="busLabel">
+      <component id="71bd2" class="javax.swing.JLabel" binding="boatLabel">
         <constraints>
           <grid row="18" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -548,7 +548,7 @@
           <snapToTicks value="true"/>
         </properties>
       </component>
-      <component id="301b4" class="javax.swing.JSlider" binding="busSlider">
+      <component id="301b4" class="javax.swing.JSlider" binding="boatSlider">
         <constraints>
           <grid row="18" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

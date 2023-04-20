@@ -21,6 +21,14 @@ increase the reach and impact of the game by leveraging the networks of these or
 TODO
 initialization
 - set the value of the sliders in it's own method
+        According to the Energy Trends: UK electricity report by the Department for Business, Energy & Industrial Strategy1, the UK used different sources to generate electricity in 2020. The main sources were:
+            Gas: 36.2%
+            Renewables: 43.1%
+            Nuclear: 16.1%
+            Coal: 1.8%
+            Other fuels: 2.8%
+            Renewables include wind, solar, hydro and bioenergy. The share of renewables increased by 6.5 percentage points from 2019, mainly due to increased wind generation1.
+
 - set each target
 - set money
 
@@ -28,7 +36,18 @@ set logic for slider changes
 - show the real time value
 - implement a enum to store name, unit price, coefficient, type for each type of energy
 - re-calculate total energy using a common method with enum as parameter
+
+input
+parameter, argument
+variable
+method
+class, object, type
+instance
+
+
 */
+
+import com.angie.climate.ClimateChangeGame.Energy;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -38,8 +57,17 @@ public class ClimateChangeGame {
 
     public static void main(String[] arg) {
         final GameScreenState gameScreen = new GameScreenState();
+        gameScreen.getOilLabel().setText("3");
+        gameScreen.getOilSlider().setValue(3);
+        gameScreen.getGasLabel().setText("33");
+        gameScreen.getGasSlider().setValue(33);
+        gameScreen.getNuclearLabel().setText("15");
+        gameScreen.getNuclearSlider().setValue(15);
+        gameScreen.getWindLabel().setText("38");
+        gameScreen.getWindSlider().setValue(38);
+        //Keep going with all setter.
+        setDefault(gameScreen);
 
-        //setDefault(gameScreen);
         final JFrame frame = new JFrame("Climate Change Game");
         frame.setContentPane(gameScreen.getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -103,13 +131,13 @@ public class ClimateChangeGame {
             }
         });
 
-        gameScreen.getBusSlider().addChangeListener(new ChangeListener() {
+        gameScreen.getBoatSlider().addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
                 JSlider source = (JSlider) e.getSource();
                 if (!source.getValueIsAdjusting()) {
                     int busValue = source.getValue();
-                    gameScreen.getBusLabel().setText(String.valueOf(busValue));
+                    gameScreen.getBoatLabel().setText(String.valueOf(busValue));
                 }
             }
         });
@@ -158,18 +186,24 @@ public class ClimateChangeGame {
             }
         });
 
+
         frame.pack();
         frame.setVisible(true);
 
 
     }
 
+    private static void setDefault(GameScreenState gameScreen) {
+        gameScreen.getGasLabel().setText("100");
+//        JLabel a = gameScreen.getOilLabel();
+//        a.setText("100");
 
-    public void energySupplyCalculator() {
-        int totalEnergySupply;
-
+        gameScreen.getNuclearLabel().setText("100");
+        gameScreen.getWindLabel().setText("100");
+        gameScreen.getOilLabel().setText("100");
+        gameScreen.getOilLabel().setText("100");
+        gameScreen.getOilLabel().setText("100");
     }
-
 
     public void moneyCalculator() {
         double money = 1000;
@@ -178,4 +212,20 @@ public class ClimateChangeGame {
     public void carbonCalculator() {
 
     }
+
+    public enum Energy {
+
+    }
+
+    public class EnergySupplyCalculator() {
+        enum EnergyType {
+            OIL("gallon", 2.5, 2, Energy),
+            GAS("therm", 1.2, 3, Energy),
+            NUCLEEAR("gallon", 3.0, )
+
+        }
+
+    }
+
+
 }

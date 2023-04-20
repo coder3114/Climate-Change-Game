@@ -7,6 +7,7 @@ import java.awt.*;
 import java.util.Locale;
 
 public class GameScreenState {
+    private JLabel oilLabel;
     private JButton iAmReadyToButton;
     private JSlider oilSlider;
     private JSlider gasSlider;
@@ -14,11 +15,10 @@ public class GameScreenState {
     private JSlider windSlider;
     private JSlider trainSlider;
     private JSlider meatSlider;
-    private JSlider busSlider;
+    private JSlider boatSlider;
     private JPanel mainPanel;
     private JSlider planeSlider;
     private JSlider carSlider;
-    private JLabel oilLabel;
     private JSlider plantSlider;
     private JLabel totalEnergyValue;
     private JLabel totalDistanceValue;
@@ -28,7 +28,7 @@ public class GameScreenState {
     private JLabel windLabel;
     private JLabel trainLabel;
     private JLabel carLabel;
-    private JLabel busLabel;
+    private JLabel boatLabel;
     private JLabel planeLabel;
     private JLabel meatLabel;
     private JLabel plantLabel;
@@ -38,6 +38,46 @@ public class GameScreenState {
 // >>> IMPORTANT!! <<<
 // DO NOT EDIT OR ADD ANY CODE HERE!
         $$$setupUI$$$();
+    }
+
+    public JLabel getOilLabel() {
+        return oilLabel;
+    }
+
+    public JLabel getGasLabel() {
+        return gasLabel;
+    }
+
+    public JLabel getNuclearLabel() {
+        return nuclearLabel;
+    }
+
+    public JLabel getWindLabel() {
+        return windLabel;
+    }
+
+    public JLabel getTrainLabel() {
+        return trainLabel;
+    }
+
+    public JLabel getBoatLabel() {
+        return boatLabel;
+    }
+
+    public JLabel getCarLabel() {
+        return carLabel;
+    }
+
+    public JLabel getPlaneLabel() {
+        return planeLabel;
+    }
+
+    public JLabel getMeatLabel() {
+        return meatLabel;
+    }
+
+    public JLabel getPlantLabel() {
+        return plantLabel;
     }
 
     public JButton getIAmReadyToButton() {
@@ -64,8 +104,8 @@ public class GameScreenState {
         return trainSlider;
     }
 
-    public JSlider getBusSlider() {
-        return busSlider;
+    public JSlider getBoatSlider() {
+        return boatSlider;
     }
 
     public JSlider getCarSlider() {
@@ -82,46 +122,6 @@ public class GameScreenState {
 
     public JSlider getPlantSlider() {
         return plantSlider;
-    }
-
-    public JLabel getOilLabel() {
-        return oilLabel;
-    }
-
-    public JLabel getGasLabel() {
-        return gasLabel;
-    }
-
-    public JLabel getNuclearLabel() {
-        return nuclearLabel;
-    }
-
-    public JLabel getWindLabel() {
-        return windLabel;
-    }
-
-    public JLabel getTrainLabel() {
-        return trainLabel;
-    }
-
-    public JLabel getBusLabel() {
-        return busLabel;
-    }
-
-    public JLabel getCarLabel() {
-        return carLabel;
-    }
-
-    public JLabel getPlaneLabel() {
-        return planeLabel;
-    }
-
-    public JLabel getMeatLabel() {
-        return meatLabel;
-    }
-
-    public JLabel getPlantLabel() {
-        return plantLabel;
     }
 
     public JPanel getMainPanel() {
@@ -245,7 +245,7 @@ public class GameScreenState {
         mainPanel.add(label14, new com.intellij.uiDesigner.core.GridConstraints(17, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(102, 16), null, 0, false));
         trainLabel = new JLabel();
         trainLabel.setText("100");
-        mainPanel.add(trainLabel, new com.intellij.uiDesigner.core.GridConstraints(17, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainPanel.add(trainLabel, new com.intellij.uiDesigner.core.GridConstraints(16, 3, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         planeLabel = new JLabel();
         planeLabel.setText("100");
         mainPanel.add(planeLabel, new com.intellij.uiDesigner.core.GridConstraints(20, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -271,7 +271,7 @@ public class GameScreenState {
         mainPanel.add(separator1, new com.intellij.uiDesigner.core.GridConstraints(15, 0, 1, 4, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         oilLabel = new JLabel();
         oilLabel.setHorizontalTextPosition(4);
-        oilLabel.setText("100");
+        oilLabel.setText("2");
         mainPanel.add(oilLabel, new com.intellij.uiDesigner.core.GridConstraints(9, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JSeparator separator2 = new JSeparator();
         mainPanel.add(separator2, new com.intellij.uiDesigner.core.GridConstraints(23, 0, 1, 4, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -340,11 +340,11 @@ public class GameScreenState {
         label26.setText("Cars");
         mainPanel.add(label26, new com.intellij.uiDesigner.core.GridConstraints(19, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(102, 16), null, 0, false));
         final JLabel label27 = new JLabel();
-        label27.setText("Boats  / Bus??");
+        label27.setText("Boats");
         mainPanel.add(label27, new com.intellij.uiDesigner.core.GridConstraints(18, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(102, 16), null, 0, false));
-        busLabel = new JLabel();
-        busLabel.setText("100");
-        mainPanel.add(busLabel, new com.intellij.uiDesigner.core.GridConstraints(18, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        boatLabel = new JLabel();
+        boatLabel.setText("100");
+        mainPanel.add(boatLabel, new com.intellij.uiDesigner.core.GridConstraints(18, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         carLabel = new JLabel();
         carLabel.setText("100");
         mainPanel.add(carLabel, new com.intellij.uiDesigner.core.GridConstraints(19, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -360,12 +360,12 @@ public class GameScreenState {
         carSlider.setPaintTicks(true);
         carSlider.setSnapToTicks(true);
         mainPanel.add(carSlider, new com.intellij.uiDesigner.core.GridConstraints(19, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        busSlider = new JSlider();
-        busSlider.setMajorTickSpacing(10);
-        busSlider.setMinorTickSpacing(10);
-        busSlider.setPaintTicks(true);
-        busSlider.setSnapToTicks(true);
-        mainPanel.add(busSlider, new com.intellij.uiDesigner.core.GridConstraints(18, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        boatSlider = new JSlider();
+        boatSlider.setMajorTickSpacing(10);
+        boatSlider.setMinorTickSpacing(10);
+        boatSlider.setPaintTicks(true);
+        boatSlider.setSnapToTicks(true);
+        mainPanel.add(boatSlider, new com.intellij.uiDesigner.core.GridConstraints(18, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
@@ -400,4 +400,5 @@ public class GameScreenState {
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
+
 }
