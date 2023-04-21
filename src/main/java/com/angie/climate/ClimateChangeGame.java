@@ -34,7 +34,7 @@ initialization
 
 set logic for slider changes
 - show the real time value
-- implement a enum to store name, unit price, coefficient, type for each type of energy
+- implement an enum to store name, unit price, coefficient, type for each type of energy
 - re-calculate total energy using a common method with enum as parameter
 
 input
@@ -50,8 +50,15 @@ instance
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class ClimateChangeGame {
+
+    private static final Map<Factor, Double> s_factorVolumeMap = new HashMap<>();
+
 
     public static void main(String[] arg) {
         final GameScreenState gameScreen = new GameScreenState();
@@ -68,6 +75,7 @@ public class ClimateChangeGame {
                     int oilValue = source.getValue();
                     gameScreen.getOilLabel().setText(String.valueOf(oilValue));
                     // do something with the new value, e.g. update a variable or call a method
+                    calculateTotals(Factor.OIL, oilValue);
                 }
                 //moneyCalculator(homeEnergyAmountOfElectricity);
             }
@@ -189,8 +197,19 @@ public class ClimateChangeGame {
         gameScreen.getTargetEnergyLabel().setText("500");
     }
 
-    public void moneyCalculator() {
-        double money = 1000;
+    public static void calculateTotals(Factor factor, int factorValue) {
+        double factorVolume = factor.getVolume(factorValue);
+        s_factorVolumeMap.put(factor, factorVolume);
+
+        Set<Entry<Factor, Double>> entries = s_factorVolumeMap.entrySet();
+        double sum = 0;
+        for (Entry<Factor, Double> pair : entries) {
+            if (factor.getFactorType() == pair.getKey().getFactorType()) {
+                sum += pair.getValue();
+            }
+        }
+
+        int factorCost = factor.getCost(factorValue);
     }
 
     public void carbonCalculator() {
