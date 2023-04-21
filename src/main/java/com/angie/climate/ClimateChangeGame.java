@@ -185,6 +185,8 @@ public class ClimateChangeGame {
         gameScreen.getGasSlider().setValue(30);
         gameScreen.getNuclearSlider().setValue(10);
         gameScreen.getWindSlider().setValue(40);
+
+        gameScreen.getTargetEnergyLabel().setText("500");
     }
 
     public void moneyCalculator() {
