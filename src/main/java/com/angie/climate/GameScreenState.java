@@ -271,7 +271,7 @@ public class GameScreenState {
         mainPanel.add(separator1, new com.intellij.uiDesigner.core.GridConstraints(15, 0, 1, 4, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         oilLabel = new JLabel();
         oilLabel.setHorizontalTextPosition(4);
-        oilLabel.setText("2");
+        oilLabel.setText("100");
         mainPanel.add(oilLabel, new com.intellij.uiDesigner.core.GridConstraints(9, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JSeparator separator2 = new JSeparator();
         mainPanel.add(separator2, new com.intellij.uiDesigner.core.GridConstraints(23, 0, 1, 4, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -285,7 +285,6 @@ public class GameScreenState {
         oilSlider.setPaintTicks(true);
         oilSlider.setPaintTrack(true);
         oilSlider.setSnapToTicks(true);
-        oilSlider.setValue(50);
         oilSlider.setValueIsAdjusting(false);
         oilSlider.putClientProperty("JSlider.isFilled", Boolean.TRUE);
         oilSlider.putClientProperty("Slider.paintThumbArrowShape", Boolean.FALSE);

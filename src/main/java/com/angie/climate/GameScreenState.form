@@ -319,7 +319,7 @@
         </constraints>
         <properties>
           <horizontalTextPosition value="4"/>
-          <text value="2"/>
+          <text value="100"/>
         </properties>
       </component>
       <component id="e25eb" class="javax.swing.JSeparator">
@@ -342,7 +342,6 @@
           <paintTicks value="true"/>
           <paintTrack value="true"/>
           <snapToTicks value="true"/>
-          <value value="50"/>
           <valueIsAdjusting value="false"/>
         </properties>
         <clientProperties>

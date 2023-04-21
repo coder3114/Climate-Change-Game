@@ -47,8 +47,6 @@ instance
 
 */
 
-import com.angie.climate.ClimateChangeGame.Energy;
-
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -57,17 +55,6 @@ public class ClimateChangeGame {
 
     public static void main(String[] arg) {
         final GameScreenState gameScreen = new GameScreenState();
-        gameScreen.getOilLabel().setText("3");
-        gameScreen.getOilSlider().setValue(3);
-        gameScreen.getGasLabel().setText("33");
-        gameScreen.getGasSlider().setValue(33);
-        gameScreen.getNuclearLabel().setText("15");
-        gameScreen.getNuclearSlider().setValue(15);
-        gameScreen.getWindLabel().setText("38");
-        gameScreen.getWindSlider().setValue(38);
-        //Keep going with all setter.
-        setDefault(gameScreen);
-
         final JFrame frame = new JFrame("Climate Change Game");
         frame.setContentPane(gameScreen.getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -190,19 +177,14 @@ public class ClimateChangeGame {
         frame.pack();
         frame.setVisible(true);
 
-
+        setDefault(gameScreen);
     }
 
     private static void setDefault(GameScreenState gameScreen) {
-        gameScreen.getGasLabel().setText("100");
-//        JLabel a = gameScreen.getOilLabel();
-//        a.setText("100");
-
-        gameScreen.getNuclearLabel().setText("100");
-        gameScreen.getWindLabel().setText("100");
-        gameScreen.getOilLabel().setText("100");
-        gameScreen.getOilLabel().setText("100");
-        gameScreen.getOilLabel().setText("100");
+        gameScreen.getOilSlider().setValue(30);
+        gameScreen.getGasSlider().setValue(30);
+        gameScreen.getNuclearSlider().setValue(10);
+        gameScreen.getWindSlider().setValue(40);
     }
 
     public void moneyCalculator() {
@@ -212,7 +194,7 @@ public class ClimateChangeGame {
     public void carbonCalculator() {
 
     }
-
+/*
     public enum Energy {
 
     }
@@ -226,6 +208,6 @@ public class ClimateChangeGame {
         }
 
     }
-
+*/
 
 }
