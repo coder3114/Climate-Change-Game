@@ -137,7 +137,7 @@ public class GameScreenState {
     }
 
     public JLabel getTotalTransportValue() {
-        return targetTransportValue;
+        return totalTransportValue;
     }
 
     public JLabel getTotalFoodValue() {

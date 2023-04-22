@@ -17,6 +17,14 @@ Final improving ideas: Collaborate with climate change organizations: Partner wi
 experts to ensure the accuracy and relevance of the information presented in the game. This could also help to
 increase the reach and impact of the game by leveraging the networks of these organizations.
 
+TODO
+initialization
+ - set real values for each factor in enum
+ - set target values for all factor types
+ - work out how to calculate carbon footprint WITH the trigger of the bottom
+
+
+
 
 TODO
 initialization
