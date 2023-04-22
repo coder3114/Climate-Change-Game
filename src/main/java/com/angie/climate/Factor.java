@@ -6,17 +6,14 @@ public enum Factor {
     NUCLEAR(3, 4, FactorType.ENERGY),
     WIND(2, 3, FactorType.ENERGY),
 
-//    TRAIN(),
-//
-//    BOAT(),
-//
-//    CAR(),
-//
-//    FLIGHT(),
-//
-//    MEAT(),
-//
-//    PLANT();
+    TRAIN(1, 1, FactorType.TRANSPORT),
+    BOAT(1, 1, FactorType.TRANSPORT),
+    CAR(1, 1, FactorType.TRANSPORT),
+    FLIGHT(1, 1, FactorType.TRANSPORT),
+
+    MEAT(1, 1, FactorType.FOOD),
+    PLANT(1, 1, FactorType.FOOD);
+
     private final int m_unitPrice;
 
     private final double m_multiplier;

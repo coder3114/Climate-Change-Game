@@ -50,6 +50,7 @@ instance
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -209,10 +210,12 @@ public class ClimateChangeGame {
         gameScreen.getWindSlider().setValue(40);
 
         gameScreen.getTargetEnergyLabel().setText("500");
+
+
     }
 
     public static void calculateTotals(Factor factor, int factorValue, GameScreenState gameScreen) {
-        //generic method to calculate costs
+        //generic a method to calculate each factor volume
         double factorVolume = factor.getVolume(factorValue);
         s_factorVolumeMap.put(factor, factorVolume);
 
@@ -228,22 +231,23 @@ public class ClimateChangeGame {
                 gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
             case TRANSPORT:
                 gameScreen.getTotalTransportValue().setText(String.valueOf(sum));
-            default:
+            case FOOD:
                 gameScreen.getTotalFoodValue().setText(String.valueOf(sum));
+                break;
         }
 
+        //if not meet target, return alert!!
 
-        //generic method to calculate costs
+        //generic a method to calculate total costs
         int factorCost = factor.getCost(factorValue);
         s_factorCostMap.put(factor, factorCost);
 
-        Set<Entry<Factor, Integer>> entries1 = s_factorCostMap.entrySet();
+        Collection<Integer> costCollection = s_factorCostMap.values();
         int sumCost = 0;
-        for (Entry<Factor, Integer> pair : entries1) {
-            if (factor.getFactorType() == pair.getKey().getFactorType()) {
-                sumCost += pair.getValue();
-            }
+        for (Integer cost : costCollection) {
+            sumCost += cost;
         }
+
         gameScreen.getTotalCostLabel().setText(String.valueOf(sumCost));
     }
 
