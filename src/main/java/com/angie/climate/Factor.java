@@ -6,6 +6,7 @@ public enum Factor {
     NUCLEAR(3, 4, FactorType.ENERGY),
     WIND(2, 3, FactorType.ENERGY);
 
+
     private final int m_unitPrice;
 
     private final double m_multiplier;

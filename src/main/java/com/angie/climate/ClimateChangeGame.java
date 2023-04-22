@@ -57,8 +57,9 @@ import java.util.Set;
 
 public class ClimateChangeGame {
 
+    //Create a map to store and retrieve factors (act as Keys) and their associated Volume/Cost
     private static final Map<Factor, Double> s_factorVolumeMap = new HashMap<>();
-
+    private static final Map<Factor, Integer> s_factorCostMap = new HashMap<>();
 
     public static void main(String[] arg) {
         final GameScreenState gameScreen = new GameScreenState();
@@ -75,7 +76,9 @@ public class ClimateChangeGame {
                     int oilValue = source.getValue();
                     gameScreen.getOilLabel().setText(String.valueOf(oilValue));
                     // do something with the new value, e.g. update a variable or call a method
-                    calculateTotals(Factor.OIL, oilValue);
+                    calculateTotals(Factor.OIL, oilValue, gameScreen);
+                    calculateCost(Factor.OIL, oilValue, gameScreen);
+//                    gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
                 }
                 //moneyCalculator(homeEnergyAmountOfElectricity);
             }
@@ -89,6 +92,9 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int gasValue = source.getValue();
                     gameScreen.getGasLabel().setText(String.valueOf(gasValue));
+                    calculateTotals(Factor.GAS, gasValue, gameScreen);
+                    calculateCost(Factor.GAS, gasValue, gameScreen);
+
                 }
             }
         });
@@ -100,6 +106,8 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int nuclearValue = source.getValue();
                     gameScreen.getNuclearLabel().setText(String.valueOf(nuclearValue));
+                    calculateTotals(Factor.NUCLEAR, nuclearValue, gameScreen);
+                    calculateCost(Factor.NUCLEAR, nuclearValue, gameScreen);
                 }
             }
         });
@@ -111,6 +119,8 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int windValue = source.getValue();
                     gameScreen.getWindLabel().setText(String.valueOf(windValue));
+                    calculateTotals(Factor.WIND, windValue, gameScreen);
+                    calculateCost(Factor.WIND, windValue, gameScreen);
                 }
             }
         });
@@ -197,7 +207,7 @@ public class ClimateChangeGame {
         gameScreen.getTargetEnergyLabel().setText("500");
     }
 
-    public static void calculateTotals(Factor factor, int factorValue) {
+    public static void calculateTotals(Factor factor, int factorValue, GameScreenState gameScreen) {
         double factorVolume = factor.getVolume(factorValue);
         s_factorVolumeMap.put(factor, factorVolume);
 
@@ -208,9 +218,25 @@ public class ClimateChangeGame {
                 sum += pair.getValue();
             }
         }
+        gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
+        
 
-        int factorCost = factor.getCost(factorValue);
     }
+
+    public static void calculateCost(Factor factor, int factorValue, GameScreenState gameScreen) {
+        int factorCost = factor.getCost(factorValue);
+        s_factorCostMap.put(factor, factorCost);
+
+        Set<Entry<Factor, Integer>> entries = s_factorCostMap.entrySet();
+        int sumCost = 0;
+        for (Entry<Factor, Integer> pair : entries) {
+            if (factor.getFactorType() == pair.getKey().getFactorType()) {
+                sumCost += pair.getValue();
+            }
+        }
+        gameScreen.getTotalCostLabel().setText(String.valueOf(sumCost));
+    }
+
 
     public void carbonCalculator() {
 
