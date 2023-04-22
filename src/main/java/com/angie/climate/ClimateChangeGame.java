@@ -77,7 +77,6 @@ public class ClimateChangeGame {
                     gameScreen.getOilLabel().setText(String.valueOf(oilValue));
                     // do something with the new value, e.g. update a variable or call a method
                     calculateTotals(Factor.OIL, oilValue, gameScreen);
-                    calculateCost(Factor.OIL, oilValue, gameScreen);
 //                    gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
                 }
                 //moneyCalculator(homeEnergyAmountOfElectricity);
@@ -93,7 +92,6 @@ public class ClimateChangeGame {
                     int gasValue = source.getValue();
                     gameScreen.getGasLabel().setText(String.valueOf(gasValue));
                     calculateTotals(Factor.GAS, gasValue, gameScreen);
-                    calculateCost(Factor.GAS, gasValue, gameScreen);
 
                 }
             }
@@ -107,7 +105,7 @@ public class ClimateChangeGame {
                     int nuclearValue = source.getValue();
                     gameScreen.getNuclearLabel().setText(String.valueOf(nuclearValue));
                     calculateTotals(Factor.NUCLEAR, nuclearValue, gameScreen);
-                    calculateCost(Factor.NUCLEAR, nuclearValue, gameScreen);
+
                 }
             }
         });
@@ -120,7 +118,7 @@ public class ClimateChangeGame {
                     int windValue = source.getValue();
                     gameScreen.getWindLabel().setText(String.valueOf(windValue));
                     calculateTotals(Factor.WIND, windValue, gameScreen);
-                    calculateCost(Factor.WIND, windValue, gameScreen);
+
                 }
             }
         });
@@ -132,6 +130,7 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int trainValue = source.getValue();
                     gameScreen.getTrainLabel().setText(String.valueOf(trainValue));
+                    calculateTotals(Factor.TRAIN, trainValue, gameScreen);
                 }
             }
         });
@@ -143,6 +142,7 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int busValue = source.getValue();
                     gameScreen.getBoatLabel().setText(String.valueOf(busValue));
+                    calculateTotals(Factor.BOAT, busValue, gameScreen);
                 }
             }
         });
@@ -154,17 +154,19 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int carValue = source.getValue();
                     gameScreen.getCarLabel().setText(String.valueOf(carValue));
+                    calculateTotals(Factor.CAR, carValue, gameScreen);
                 }
             }
         });
 
-        gameScreen.getPlaneSlider().addChangeListener(new ChangeListener() {
+        gameScreen.getFlightSlider().addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
                 JSlider source = (JSlider) e.getSource();
                 if (!source.getValueIsAdjusting()) {
-                    int planeValue = source.getValue();
-                    gameScreen.getPlaneLabel().setText(String.valueOf(planeValue));
+                    int flightValue = source.getValue();
+                    gameScreen.getFlightLabel().setText(String.valueOf(flightValue));
+                    calculateTotals(Factor.FLIGHT, flightValue, gameScreen);
                 }
             }
         });
@@ -176,6 +178,7 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int meatValue = source.getValue();
                     gameScreen.getMeatLabel().setText(String.valueOf(meatValue));
+                    calculateTotals(Factor.MEAT, meatValue, gameScreen);
                 }
             }
         });
@@ -187,6 +190,7 @@ public class ClimateChangeGame {
                 if (!source.getValueIsAdjusting()) {
                     int plantValue = source.getValue();
                     gameScreen.getPlantLabel().setText(String.valueOf(plantValue));
+                    calculateTotals(Factor.PLANT, plantValue, gameScreen);
                 }
             }
         });
@@ -208,6 +212,7 @@ public class ClimateChangeGame {
     }
 
     public static void calculateTotals(Factor factor, int factorValue, GameScreenState gameScreen) {
+        //generic method to calculate costs
         double factorVolume = factor.getVolume(factorValue);
         s_factorVolumeMap.put(factor, factorVolume);
 
@@ -218,18 +223,23 @@ public class ClimateChangeGame {
                 sum += pair.getValue();
             }
         }
-        gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
-        
+        switch (factor.getFactorType()) {
+            case ENERGY:
+                gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
+            case TRANSPORT:
+                gameScreen.getTotalTransportValue().setText(String.valueOf(sum));
+            default:
+                gameScreen.getTotalFoodValue().setText(String.valueOf(sum));
+        }
 
-    }
 
-    public static void calculateCost(Factor factor, int factorValue, GameScreenState gameScreen) {
+        //generic method to calculate costs
         int factorCost = factor.getCost(factorValue);
         s_factorCostMap.put(factor, factorCost);
 
-        Set<Entry<Factor, Integer>> entries = s_factorCostMap.entrySet();
+        Set<Entry<Factor, Integer>> entries1 = s_factorCostMap.entrySet();
         int sumCost = 0;
-        for (Entry<Factor, Integer> pair : entries) {
+        for (Entry<Factor, Integer> pair : entries1) {
             if (factor.getFactorType() == pair.getKey().getFactorType()) {
                 sumCost += pair.getValue();
             }
@@ -241,20 +251,6 @@ public class ClimateChangeGame {
     public void carbonCalculator() {
 
     }
-/*
-    public enum Energy {
 
-    }
-
-    public class EnergySupplyCalculator() {
-        enum EnergyType {
-            OIL("gallon", 2.5, 2, Energy),
-            GAS("therm", 1.2, 3, Energy),
-            NUCLEEAR("gallon", 3.0, )
-
-        }
-
-    }
-*/
 
 }

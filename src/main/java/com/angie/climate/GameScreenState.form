@@ -162,10 +162,10 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Planes"/>
+          <text value="Flights"/>
         </properties>
       </component>
-      <component id="17816" class="javax.swing.JSlider" binding="planeSlider">
+      <component id="17816" class="javax.swing.JSlider" binding="flightSlider">
         <constraints>
           <grid row="20" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -252,7 +252,7 @@
           <text value="100"/>
         </properties>
       </component>
-      <component id="e93a0" class="javax.swing.JLabel" binding="planeLabel">
+      <component id="e93a0" class="javax.swing.JLabel" binding="flightLabel">
         <constraints>
           <grid row="20" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -375,44 +375,12 @@
           <text value="Total distance"/>
         </properties>
       </component>
-      <component id="ee3b0" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="21" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Target 1000"/>
-        </properties>
-      </component>
-      <component id="5d0b2" class="javax.swing.JLabel" binding="totalDistanceValue">
-        <constraints>
-          <grid row="21" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="100"/>
-        </properties>
-      </component>
       <component id="9e851" class="javax.swing.JLabel">
         <constraints>
           <grid row="27" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Total energy supply"/>
-        </properties>
-      </component>
-      <component id="8b6aa" class="javax.swing.JLabel" binding="totalFoodValue">
-        <constraints>
-          <grid row="27" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="100"/>
-        </properties>
-      </component>
-      <component id="f64b4" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="27" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Target 500"/>
         </properties>
       </component>
       <vspacer id="73ac3">
@@ -561,6 +529,38 @@
       <component id="5fd96" class="javax.swing.JLabel" binding="targetEnergyLabel">
         <constraints>
           <grid row="13" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="5d0b2" class="javax.swing.JLabel" binding="totalTransportValue">
+        <constraints>
+          <grid row="21" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="100"/>
+        </properties>
+      </component>
+      <component id="e41db" class="javax.swing.JLabel" binding="targetTransportValue">
+        <constraints>
+          <grid row="21" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="8b6aa" class="javax.swing.JLabel" binding="totalFoodValue">
+        <constraints>
+          <grid row="27" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="100"/>
+        </properties>
+      </component>
+      <component id="4ac7e" class="javax.swing.JLabel" binding="targetFoodValue">
+        <constraints>
+          <grid row="27" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Label"/>
