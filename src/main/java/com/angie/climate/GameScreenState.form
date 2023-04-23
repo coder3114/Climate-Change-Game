@@ -37,7 +37,7 @@
           <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Total energy consumption (Million tonnes of oil equivalent)"/>
+          <text value="Energy supply (Million tonnes of oil equivalent)"/>
         </properties>
       </component>
       <component id="94d94" class="javax.swing.JLabel">
@@ -91,7 +91,7 @@
       </component>
       <component id="56ab1" class="javax.swing.JButton" binding="iAmReadyToButton" default-binding="true">
         <constraints>
-          <grid row="29" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="29" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="102" height="30"/>
           </grid>
         </constraints>
@@ -129,7 +129,7 @@
           <text value="£££"/>
         </properties>
       </component>
-      <component id="b14fd" class="javax.swing.JLabel">
+      <component id="b14fd" class="javax.swing.JLabel" binding="finalScoreLabel">
         <constraints>
           <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -395,7 +395,7 @@
           <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Transportation"/>
+          <text value="Transportation (Domestic passenger kilometres)"/>
         </properties>
       </component>
       <component id="b249e" class="javax.swing.JLabel">

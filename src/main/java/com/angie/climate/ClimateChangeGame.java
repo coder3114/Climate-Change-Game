@@ -12,7 +12,6 @@ factors:
 cars, trains, bikes
 factories/industries plants, offices
 
-
 Final improving ideas: Collaborate with climate change organizations: Partner with climate change organizations and
 experts to ensure the accuracy and relevance of the information presented in the game. This could also help to
 increase the reach and impact of the game by leveraging the networks of these organizations.
@@ -22,9 +21,6 @@ initialization
  - set real values for each factor in enum
  - set target values for all factor types
  - work out how to calculate carbon footprint WITH the trigger of the bottom
-
-
-
 
 TODO
 initialization
@@ -51,8 +47,6 @@ variable
 method
 class, object, type
 instance
-
-
 */
 
 import javax.swing.*;
@@ -68,13 +62,22 @@ public class ClimateChangeGame {
 
     //Create a map to store and retrieve factors (act as Keys) and their associated Volume/Cost
     private static final Map<Factor, Double> s_factorVolumeMap = new HashMap<>();
+
     private static final Map<Factor, Integer> s_factorCostMap = new HashMap<>();
+
+    private static final Map<Factor, Integer> s_factorEmissionMap = new HashMap<>();
+
+    private static int s_originalEmission;
 
     public static void main(String[] arg) {
         final GameScreenState gameScreen = new GameScreenState();
         final JFrame frame = new JFrame("Climate Change Game");
         frame.setContentPane(gameScreen.getMainPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        int energyTarget = 500;
+        int transportTarget = 700;
+        int foodTarget = 450;
 
         // add a change listener to the oil slider
         gameScreen.getOilSlider().addChangeListener(new ChangeListener() {
@@ -86,9 +89,7 @@ public class ClimateChangeGame {
                     gameScreen.getOilLabel().setText(String.valueOf(oilValue));
                     // do something with the new value, e.g. update a variable or call a method
                     calculateTotals(Factor.OIL, oilValue, gameScreen);
-//                    gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
                 }
-                //moneyCalculator(homeEnergyAmountOfElectricity);
             }
         });
 
@@ -101,7 +102,6 @@ public class ClimateChangeGame {
                     int gasValue = source.getValue();
                     gameScreen.getGasLabel().setText(String.valueOf(gasValue));
                     calculateTotals(Factor.GAS, gasValue, gameScreen);
-
                 }
             }
         });
@@ -114,7 +114,6 @@ public class ClimateChangeGame {
                     int nuclearValue = source.getValue();
                     gameScreen.getNuclearLabel().setText(String.valueOf(nuclearValue));
                     calculateTotals(Factor.NUCLEAR, nuclearValue, gameScreen);
-
                 }
             }
         });
@@ -127,7 +126,6 @@ public class ClimateChangeGame {
                     int windValue = source.getValue();
                     gameScreen.getWindLabel().setText(String.valueOf(windValue));
                     calculateTotals(Factor.WIND, windValue, gameScreen);
-
                 }
             }
         });
@@ -208,17 +206,34 @@ public class ClimateChangeGame {
         frame.pack();
         frame.setVisible(true);
 
-        setDefault(gameScreen);
+        setDefault(gameScreen, energyTarget, transportTarget, foodTarget);
+
+        //click bottom to go
+        //gameScreen.getIAmReadyToButton()
+
     }
 
-    private static void setDefault(GameScreenState gameScreen) {
+    private static void setDefault(GameScreenState gameScreen, int energyTarget, int transportTarget, int foodTarget) {
         gameScreen.getOilSlider().setValue(30);
         gameScreen.getGasSlider().setValue(30);
         gameScreen.getNuclearSlider().setValue(10);
         gameScreen.getWindSlider().setValue(40);
 
-        gameScreen.getTargetEnergyLabel().setText("500");
+        gameScreen.getTrainSlider().setValue(40);
+        gameScreen.getCarSlider().setValue(60);
+        gameScreen.getBoatSlider().setValue(20);
+        gameScreen.getFlightSlider().setValue(10);
 
+        gameScreen.getMeatSlider().setValue(50);
+        gameScreen.getPlantSlider().setValue(30);
+
+        gameScreen.getTargetEnergyLabel().setText(String.valueOf(energyTarget));
+        gameScreen.getTargetTransportValue().setText(String.valueOf(transportTarget));
+        gameScreen.getTargetFoodValue().setText(String.valueOf(foodTarget));
+
+//        // loop through emissions map and save original emission figure
+//        Set<Entry<Factor, Integer>> entries = s_factorEmissionMap.entrySet();
+//        s_originalEmission
 
     }
 
@@ -237,16 +252,16 @@ public class ClimateChangeGame {
         switch (factor.getFactorType()) {
             case ENERGY:
                 gameScreen.getTotalEnergyValue().setText(String.valueOf(sum));
+                break;
             case TRANSPORT:
                 gameScreen.getTotalTransportValue().setText(String.valueOf(sum));
-            case FOOD:
+                break;
+            default:
                 gameScreen.getTotalFoodValue().setText(String.valueOf(sum));
                 break;
         }
 
-        //if not meet target, return alert!!
-
-        //generic a method to calculate total costs
+        //calculate total costs
         int factorCost = factor.getCost(factorValue);
         s_factorCostMap.put(factor, factorCost);
 
@@ -255,10 +270,26 @@ public class ClimateChangeGame {
         for (Integer cost : costCollection) {
             sumCost += cost;
         }
-
         gameScreen.getTotalCostLabel().setText(String.valueOf(sumCost));
+        if (sumCost > 1000) {
+            ClimateChangeGame.infoBox("You don't have enough money :(\nPlease lower you cost until it's under the target", "");
+        }
+
+        //calculate total emission
+        int factorEmission = factor.getEmission(factorValue);
+        s_factorEmissionMap.put(factor, factorEmission);
+
+        Collection<Integer> emissionCollection = s_factorEmissionMap.values();
+        int sumEmission = 0;
+        for (Integer emission : emissionCollection) {
+            sumEmission += emission;
+        }
+        
     }
 
+    public static void infoBox(String infoMessage, String titleBar) {
+        JOptionPane.showMessageDialog(null, infoMessage, "Error Message" + titleBar, JOptionPane.INFORMATION_MESSAGE);
+    }
 
     public void carbonCalculator() {
 
