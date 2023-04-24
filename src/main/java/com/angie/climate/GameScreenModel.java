@@ -17,7 +17,8 @@ public class GameScreenModel {
 
     private int m_originalEmission = 0;
 
-    public void calculateTotals(Factor factor, int factorValue, GameScreenState gameScreen, int budget, int energyTarget, int transportTarget, int foodTarget) {
+    public void calculateTotals(Factor factor, int factorValue, GameScreenState gameScreen, int budget,
+                                int energyTarget, int transportTarget, int foodTarget) {
         //generic method to calculate each factor volume
         double factorVolume = factor.getVolume(factorValue);
         m_factorVolumeMap.put(factor, factorVolume);
@@ -99,7 +100,8 @@ public class GameScreenModel {
         return totalEmission;
     }
 
-    public void carbonCalculator(GameScreenState gameScreen, int budget) {
+    public void carbonCalculator(GameScreenState gameScreen, int budget, int energyTarget, int transportTarget,
+                                 double foodTarget) {
         int sumCost = Integer.parseInt(gameScreen.getTotalCostLabel().getText());
         if (sumCost > budget) {
             infoBox("You don't have enough money :(\n\nPlease lower you cost until it's under the target", "");
@@ -107,13 +109,14 @@ public class GameScreenModel {
         }
 
         //check factor target too
-        int totalEnergyValue = Integer.parseInt(gameScreen.getTotalEnergyValue().getText());
-        int totalTransportValue = Integer.parseInt(gameScreen.getTotalTransportValue().getText());
-        int totalFoodValue = Integer.parseInt(gameScreen.getTotalFoodValue().getText());
-        if (totalEnergyValue < Integer.parseInt(gameScreen.getTargetEnergyLabel().getText()) || totalTransportValue <
-                Integer.parseInt(gameScreen.getTargetTransportValue().getText()) || totalFoodValue <
-                Integer.parseInt(gameScreen.getTargetFoodValue().getText())) {
-            infoBox("You don't meet all the target requirement :(\n\nPlease lower you cost until it's under the target", "");
+//        int totalEnergyValue = Integer.parseInt(gameScreen.getTotalEnergyValue().getText());
+//        int totalTransportValue = Integer.parseInt(gameScreen.getTotalTransportValue().getText());
+//        int totalFoodValue = Integer.parseInt(gameScreen.getTotalFoodValue().getText());
+        if (Double.parseDouble(gameScreen.getTotalEnergyValue().getText()) < energyTarget ||
+                Double.parseDouble(gameScreen.getTotalTransportValue().getText()) < transportTarget ||
+                Double.parseDouble(gameScreen.getTotalFoodValue().getText()) < foodTarget) {
+            infoBox("You don't meet all the target requirement :(\n\n" +
+                    "Please lower you cost until it's under the target", "");
             return;
         }
 

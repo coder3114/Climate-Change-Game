@@ -148,8 +148,8 @@ public class GameScreenController {
         m_gameScreen.getIAmReadyToButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                m_gameModel.carbonCalculator(m_gameScreen, m_scenario.getBudget());
-
+                m_gameModel.carbonCalculator(m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(),
+                        m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
             }
         });
     }
