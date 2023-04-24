@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Climate-Change-Game:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Climate_Change_Game_jar</output-path>
+    <root id="archive" name="Climate-Change-Game.jar">
+      <element id="module-output" name="Climate-Change-Game" />
+    </root>
+  </artifact>
+</component>
