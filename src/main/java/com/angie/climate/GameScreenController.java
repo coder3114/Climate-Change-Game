@@ -29,13 +29,13 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int oilValue = source.getValue();
                     m_gameScreen.getOilLabel().setText(String.valueOf(oilValue));
-                    // do something with the new value, e.g. update a variable or call a method
+                    // do something with the new value - call a method
                     m_gameModel.calculateTotals(Factor.OIL, oilValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
 
-        //add a change listener to the gas slider
+        //add a change listener to the slider
         m_gameScreen.getGasSlider().addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {

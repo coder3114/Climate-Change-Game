@@ -414,7 +414,7 @@ public class GameScreenState {
         final JLabel label23 = new JLabel();
         Font label23Font = this.$$$getFont$$$("JetBrains Mono", Font.BOLD, -1, label23.getFont());
         if (label23Font != null) label23.setFont(label23Font);
-        label23.setText("Carbon footprint score");
+        label23.setText("Carbon footprint reduction");
         mainPanel.add(label23, new com.intellij.uiDesigner.core.GridConstraints(3, 2, 2, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         finalScoreLabel = new JLabel();
         finalScoreLabel.setText("Click the button for result.");
@@ -422,6 +422,7 @@ public class GameScreenState {
         final JLabel label24 = new JLabel();
         Font label24Font = this.$$$getFont$$$(null, Font.ITALIC, -1, label24.getFont());
         if (label24Font != null) label24.setFont(label24Font);
+        label24.setOpaque(false);
         label24.setText("<html>Carbon Zero is a climate change strategy game where players must reduce their carbon footprint within a limited budget by adjusting sliders for energy, transportation, and food types. <br/>Drag the sliders to meet targets, reach high scores, and save the planet. Let's have fun and be green!</html>");
         mainPanel.add(label24, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, new Dimension(700, 80), new Dimension(700, 80), new Dimension(700, 80), 0, false));
         final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();

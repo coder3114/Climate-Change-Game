@@ -40,7 +40,6 @@ public class GameScreenModel {
                 } else {
                     gameScreen.getTotalEnergyValue().setForeground(Color.BLACK);
                 }
-//initial try:                if (sum < Integer.parseInt(gameScreen.getTargetEnergyLabel().getText())) {
                 break;
             case TRANSPORT:
                 gameScreen.getTotalTransportValue().setText(String.valueOf(sum));

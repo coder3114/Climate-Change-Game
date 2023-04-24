@@ -570,7 +570,7 @@
         </constraints>
         <properties>
           <font name="JetBrains Mono" style="1"/>
-          <text value="Carbon footprint score"/>
+          <text value="Carbon footprint reduction"/>
         </properties>
       </component>
       <component id="b14fd" class="javax.swing.JLabel" binding="finalScoreLabel">
@@ -591,6 +591,7 @@
         </constraints>
         <properties>
           <font style="2"/>
+          <opaque value="false"/>
           <text value="&lt;html&gt;Carbon Zero is a climate change strategy game where players must reduce their carbon footprint within a limited budget by adjusting sliders for energy, transportation, and food types. &lt;br/&gt;Drag the sliders to meet targets, reach high scores, and save the planet. Let's have fun and be green!&lt;/html&gt;"/>
         </properties>
       </component>
