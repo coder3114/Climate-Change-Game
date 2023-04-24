@@ -231,13 +231,13 @@ public class GameScreenState {
         final JLabel label5 = new JLabel();
         Font label5Font = this.$$$getFont$$$(null, Font.ITALIC, -1, label5.getFont());
         if (label5Font != null) label5.setFont(label5Font);
-        label5.setText("Draw the sliders to tell us your life style");
+        label5.setText("Drag the sliders to provide your strategy to help this country.");
         mainPanel.add(label5, new com.intellij.uiDesigner.core.GridConstraints(5, 2, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         totalCostLabel = new JLabel();
         totalCostLabel.setText("£££");
         mainPanel.add(totalCostLabel, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(102, 16), null, 0, false));
         finalScoreLabel = new JLabel();
-        finalScoreLabel.setText("Scorer");
+        finalScoreLabel.setText("100");
         mainPanel.add(finalScoreLabel, new com.intellij.uiDesigner.core.GridConstraints(2, 4, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label6 = new JLabel();
         Font label6Font = this.$$$getFont$$$("JetBrains Mono", Font.BOLD, -1, label6.getFont());

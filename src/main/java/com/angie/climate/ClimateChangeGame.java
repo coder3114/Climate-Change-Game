@@ -17,6 +17,13 @@ experts to ensure the accuracy and relevance of the information presented in the
 increase the reach and impact of the game by leveraging the networks of these organizations.
 
 TODO
+- show carbon footprint score
+- error message if any of the targets are not met
+- set volume results into RED if not meet target
+- finalise the default to make sense
+
+
+TODO
 initialization
  - set real values for each factor in enum
  - set target values for all factor types

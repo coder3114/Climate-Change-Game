@@ -30,7 +30,7 @@ public class GameScreenController {
                     int oilValue = source.getValue();
                     m_gameScreen.getOilLabel().setText(String.valueOf(oilValue));
                     // do something with the new value, e.g. update a variable or call a method
-                    m_gameModel.calculateTotals(Factor.OIL, oilValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.OIL, oilValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -43,7 +43,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int gasValue = source.getValue();
                     m_gameScreen.getGasLabel().setText(String.valueOf(gasValue));
-                    m_gameModel.calculateTotals(Factor.GAS, gasValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.GAS, gasValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -55,7 +55,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int nuclearValue = source.getValue();
                     m_gameScreen.getNuclearLabel().setText(String.valueOf(nuclearValue));
-                    m_gameModel.calculateTotals(Factor.NUCLEAR, nuclearValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.NUCLEAR, nuclearValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -67,7 +67,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int windValue = source.getValue();
                     m_gameScreen.getWindLabel().setText(String.valueOf(windValue));
-                    m_gameModel.calculateTotals(Factor.WIND, windValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.WIND, windValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -79,7 +79,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int trainValue = source.getValue();
                     m_gameScreen.getTrainLabel().setText(String.valueOf(trainValue));
-                    m_gameModel.calculateTotals(Factor.TRAIN, trainValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.TRAIN, trainValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -91,7 +91,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int busValue = source.getValue();
                     m_gameScreen.getBoatLabel().setText(String.valueOf(busValue));
-                    m_gameModel.calculateTotals(Factor.BOAT, busValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.BOAT, busValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -103,7 +103,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int carValue = source.getValue();
                     m_gameScreen.getCarLabel().setText(String.valueOf(carValue));
-                    m_gameModel.calculateTotals(Factor.CAR, carValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.CAR, carValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -115,7 +115,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int flightValue = source.getValue();
                     m_gameScreen.getFlightLabel().setText(String.valueOf(flightValue));
-                    m_gameModel.calculateTotals(Factor.FLIGHT, flightValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.FLIGHT, flightValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -127,7 +127,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int meatValue = source.getValue();
                     m_gameScreen.getMeatLabel().setText(String.valueOf(meatValue));
-                    m_gameModel.calculateTotals(Factor.MEAT, meatValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.MEAT, meatValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
@@ -139,7 +139,7 @@ public class GameScreenController {
                 if (!source.getValueIsAdjusting()) {
                     int plantValue = source.getValue();
                     m_gameScreen.getPlantLabel().setText(String.valueOf(plantValue));
-                    m_gameModel.calculateTotals(Factor.PLANT, plantValue, m_gameScreen, m_scenario.getBudget());
+                    m_gameModel.calculateTotals(Factor.PLANT, plantValue, m_gameScreen, m_scenario.getBudget(), m_scenario.getEnergyTarget(), m_scenario.getTransportTarget(), m_scenario.getFoodTarget());
                 }
             }
         });
