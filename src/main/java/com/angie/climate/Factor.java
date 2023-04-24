@@ -1,18 +1,18 @@
 package com.angie.climate;
 
 public enum Factor {
-    OIL(2, 2, 5, FactorType.ENERGY),
-    GAS(1, 3, 6, FactorType.ENERGY),
-    NUCLEAR(3, 4, 3, FactorType.ENERGY),
-    WIND(2, 3, 2, FactorType.ENERGY),
+    OIL(2, 3, 5, FactorType.ENERGY),
+    GAS(2, 2, 4, FactorType.ENERGY),
+    NUCLEAR(3, 5, 2, FactorType.ENERGY),
+    WIND(2, 2.5, 1, FactorType.ENERGY),
 
-    TRAIN(1, 5, 3, FactorType.TRANSPORT),
-    BOAT(3, 2, 2, FactorType.TRANSPORT),
-    CAR(2, 4, 4, FactorType.TRANSPORT),
-    FLIGHT(5, 1, 2, FactorType.TRANSPORT),
+    TRAIN(3, 5, 1, FactorType.TRANSPORT),
+    BOAT(3, 4, 2, FactorType.TRANSPORT),
+    CAR(1, 2, 3, FactorType.TRANSPORT),
+    FLIGHT(4, 4, 4, FactorType.TRANSPORT),
 
-    MEAT(5, 5, 5, FactorType.FOOD),
-    PLANT(3, 2, 1, FactorType.FOOD);
+    MEAT(5, 4, 5, FactorType.FOOD),
+    PLANT(2, 3, 1, FactorType.FOOD);
 
     private final int m_unitPrice;
 

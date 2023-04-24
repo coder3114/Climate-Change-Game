@@ -62,8 +62,8 @@ public class ClimateChangeGame {
 
     public static void main(String[] arg) {
         final GameScreenState gameScreen = new GameScreenState();
-        final ClimateScenario scenario = new ClimateScenario(500, 700, 450, 1000,
-                30, 30, 10, 40, 40, 60, 20, 10, 50, 30);
+        final ClimateScenario scenario = new ClimateScenario(500, 690, 450, 1200,
+                60, 60, 30, 20, 50, 80, 30, 40, 90, 30);
         final GameScreenController gameController = new GameScreenController(gameScreen, scenario);
 
         gameController.initListeners();
@@ -75,5 +75,4 @@ public class ClimateChangeGame {
         frame.pack();
         frame.setVisible(true);
     }
-
 }

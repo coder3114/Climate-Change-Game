@@ -109,9 +109,6 @@ public class GameScreenModel {
         }
 
         //check factor target too
-//        int totalEnergyValue = Integer.parseInt(gameScreen.getTotalEnergyValue().getText());
-//        int totalTransportValue = Integer.parseInt(gameScreen.getTotalTransportValue().getText());
-//        int totalFoodValue = Integer.parseInt(gameScreen.getTotalFoodValue().getText());
         if (Double.parseDouble(gameScreen.getTotalEnergyValue().getText()) < energyTarget ||
                 Double.parseDouble(gameScreen.getTotalTransportValue().getText()) < transportTarget ||
                 Double.parseDouble(gameScreen.getTotalFoodValue().getText()) < foodTarget) {
@@ -125,7 +122,7 @@ public class GameScreenModel {
         int score = sumEmission - m_originalEmission;
         gameScreen.getFinalScoreLabel().setText(String.valueOf(score));
 
-        if (score > 0) {
+        if (score < 0) {
             infoBox("Well done!\n\nYou've improved the situation", "");
         } else {
             infoBox("Not yet!\n\nPlease try your other strategy to achieve better result", "");
